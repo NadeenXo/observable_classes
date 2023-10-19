@@ -17,20 +17,15 @@ class MyViewModel : ViewModel() {
     private val _tvLiveData = MutableLiveData<String>()
     val tvLiveData: LiveData<String> = _tvLiveData
 
-    private val _tvStateFlow = MutableStateFlow("State Flow")
+    private val _tvStateFlow = MutableStateFlow("Hello World!")
     val tvStateFlow = _tvStateFlow.asStateFlow()
 
     private val _tvSharedFlow = MutableSharedFlow<String>()
     val tvSharedFlow = _tvSharedFlow.asSharedFlow()
 
-
     fun setTvLiveData(text: String) {
         _tvLiveData.value = text
     }
-
-//    fun setTvLiveData(text: String) {
-//        _tvLiveData.postValue(text) // used in background thread or corotienes
-//    }
 
     fun setTvStateFlow(text: String) {
         _tvStateFlow.value = text
@@ -50,6 +45,4 @@ class MyViewModel : ViewModel() {
             }
         }
     }
-
-
 }
